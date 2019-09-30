@@ -68,12 +68,12 @@ wtd_sys_rh_subscription_package_state: "present"
 
 ## Configuration Management
 # Configuration to register the system to a RHSM Service.
-# You need to prepare activiation keys for this Role and attach subscriptions
+# You need to prepare activation keys for this Role and attach subscriptions
 # to it.
 wtd_sys_rh_subscription_handle:
-  organisation_id: ""
-  activiation_key: ""
   state: "present"
+  organisation_id: ""
+  activation_key: ""
 ```
 
 ### Example Playbook
@@ -92,7 +92,7 @@ can be done in a
     - role: while_true_do.sys_rh_subscription
       wtd_sys_rh_subscription_handle:
         organisation_id: "<my Organisation Number (123456789)"
-        activiation_key: "<my Key Name>"
+        activation_key: "<my Key Name>"
 ```
 
 ## Known Issues

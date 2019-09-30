@@ -13,7 +13,7 @@
 - name: Manage rh_subscription Handle
   redhat_subscription:
     org_id: "{{ wtd_sys_rh_subscription_handle.organisation_id }}"
-    activiation_key: "{{ wtd_sys_rh_subscription_handle.activiation_key }}"
+    activation_key: "{{ wtd_sys_rh_subscription_handle.activation_key }}"
     state: "{{ wtd_sys_rh_subscription_handle.state | default('present') }}"
   tags:
     - rh_subscription
