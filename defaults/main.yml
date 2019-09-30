@@ -1,0 +1,16 @@
+---
+# defaults file for while_true_do.sys_rh_subscription
+
+## Package Management
+wtd_sys_rh_subscription_package: "subscription-manager"
+# State can be present|latest|absent
+wtd_sys_rh_subscription_package_state: "present"
+
+## Configuration Management
+# Configuration to register the system to a RHSM Service.
+# You need to prepare activiation keys for this Role and attach subscriptions
+# to it.
+wtd_sys_rh_subscription_handle:
+  state: "present"
+  organisation_id: ""
+  activiation_key: ""

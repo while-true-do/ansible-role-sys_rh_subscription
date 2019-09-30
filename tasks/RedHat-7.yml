@@ -1,0 +1,22 @@
+---
+# tasks file for while_true_do.sys_rh_subscription
+
+- name: Manage rh_subscription Packages
+  package:
+    name: "{{ wtd_sys_rh_subscription_package }}"
+    state: "{{ wtd_sys_rh_subscription_package_state }}"
+  become: true
+  tags:
+    - rh_subscription
+    - package
+
+- name: Manage rh_subscription Handle
+  redhat_subscription:
+    org_id: "{{ wtd_sys_rh_subscription_handle.organisation_id }}"
+    activiation_key: "{{ wtd_sys_rh_subscription_handle.activiation_key }}"
+    state: "{{ wtd_sys_rh_subscription_handle.state | default('present') }}"
+  tags:
+    - rh_subscription
+    - configuration
+    - repository
+    - subscription

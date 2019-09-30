@@ -1,0 +1,13 @@
+---
+# tasks file for while_true_do.sys_rh_subscription
+
+- name: Include distribution specific tasks
+  include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  when:
+    - ansible_distribution == "RedHat"
+  tags:
+    - rh_subscription
+    - configuration
+    - package
+    - repository
+    - subscription
