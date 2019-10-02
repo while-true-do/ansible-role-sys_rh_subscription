@@ -15,6 +15,7 @@
     org_id: "{{ wtd_sys_rh_subscription_handle.organisation_id }}"
     activationkey: "{{ wtd_sys_rh_subscription_handle.activation_key }}"
     state: "{{ wtd_sys_rh_subscription_handle.state | default('present') }}"
+  become: true
   tags:
     - rh_subscription
     - configuration
